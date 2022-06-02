@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     <>
       <header className="flex flex-row w-full px-10 py-2 shadow">
         <span className="h-8 items-center space-x-6">
-          <Link href={'/'}>
+          <Link href={'/'} passHref>
             <span className="text-2xl" style={{ cursor: 'pointer' }}>Golfr 🏌️</span>
           </Link>
           <span className="text-xl">Home</span>
