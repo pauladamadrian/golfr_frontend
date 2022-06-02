@@ -16,17 +16,23 @@ const Profile = () => {
           error
         ) : (
           <>
-            {golferScore?.name && <h1>{golferScore.name} scores:</h1>}
-            {golferScore?.scores && golferScore.scores.map(score => (
-              <ScoreCard
-                key={score.id}
-                id={score.id}
-                totalScore={score.total_score}
-                playedAt={score.played_at}
-                userId={score.user_id}
-                userName={golferScore.name}
-              />
-            ))}
+            {!golferScore ? (
+              <p>Loading...</p>
+            ) : (
+              <>
+                <h1>{golferScore.name} scores:</h1>
+                {golferScore.scores.map(score => (
+                  <ScoreCard
+                    key={score.id}
+                    id={score.id}
+                    totalScore={score.total_score}
+                    playedAt={score.played_at}
+                    userId={score.user_id}
+                    userName={golferScore.name}
+                  />
+                ))}
+              </>
+            )}
           </>
         )}
       </>
